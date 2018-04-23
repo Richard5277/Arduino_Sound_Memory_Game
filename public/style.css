@@ -1,0 +1,21 @@
+body, html {
+  padding: 0;
+  margin:0;
+  background-color: white;
+}
+
+.gameWrapper {
+  display: grid;
+  grid-template-columns: auto;
+  padding: 1.2rem;
+}
+
+.audioContent{
+  padding: 1.3rem;
+  margin: 1.2rem;
+  background-color: purple;
+}
+
+.audioTitle {
+  font-size: 1.8rem;
+}
