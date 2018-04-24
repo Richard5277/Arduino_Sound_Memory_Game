@@ -17,12 +17,12 @@ $(document).ready(function(){
 	function customPlay(audio, callback) {
 		var indexOfAudio = audios.indexOf(audio)
 		// send back to board
-		if(indexOfAudio != -1){
+		if(indexOfAudio != -1) {
 			socket.emit('soundfromserver',indexOfAudio)
-		}
-		audio.play();
-		if(callback != null) {
-			audio.onended = callback;
+            audio.play()
+            if(callback != null) {
+                audio.onended = callback;
+            }
 		}
 	}
 
@@ -40,6 +40,8 @@ $(document).ready(function(){
 				// console.log("sound : ", sounds[index])
 				if(sounds[index] !== 'undefined'){
 					customPlay(sounds[index],function(){index++; recursive_play();});
+				} else {
+					return
 				}
 
 			}
@@ -92,7 +94,7 @@ $(document).ready(function(){
 		console.log("is user answer correct : ",isCorrectAnswer)
 
 		//if right
-		if(isCorrectAnswer){
+		if(isCorrectAnswer) {
 			// play correct sound
 			audio5.play()
 			systemSoundsNumberTrack = []
@@ -100,7 +102,7 @@ $(document).ready(function(){
 			// stay in the same level
 			// auto play
 			socket.emit('autoplay', { answer: 'correct' });
-		}else {
+		} else {
 			// play wrong sound
 			audio6.play()
 			systemSoundsNumberTrack = []
@@ -110,5 +112,62 @@ $(document).ready(function(){
 			socket.emit('autoplay', { answer: 'wrong' });
 		}
 	});
+
+    /* Sound Player UI */
+
+    var audio1Content = document.getElementById('audio1Content');
+    var audio2Content = document.getElementById('audio2Content');
+    var audio3Content = document.getElementById('audio3Content');
+    var audio4Content = document.getElementById('audio4Content');
+    var audio5Content = document.getElementById('audio5Content');
+    var audio6Content = document.getElementById('audio6Content');
+
+    audio1.onplay = function() {
+        audio1Content.classList.toggle('show');
+        setTimeout(function() {
+            audio1Content.classList.toggle('show');
+        },700)
+    }
+    audio2.onplay = function() {
+        audio2Content.classList.toggle('show');
+        setTimeout(function() {
+            audio2Content.classList.toggle('show');
+        },700)
+    }
+    audio3.onplay = function() {
+        audio3Content.classList.toggle('show');
+        setTimeout(function() {
+            audio3Content.classList.toggle('show');
+        },700)
+    }
+    audio4.onplay = function() {
+        audio4Content.classList.toggle('show');
+        setTimeout(function() {
+            audio4Content.classList.toggle('show');
+        },700)
+    }
+    audio5.onplay = function() {
+        audio5Content.classList.toggle('show');
+        setTimeout(function() {
+            audio5Content.classList.toggle('show');
+        },700)
+    }
+    audio6.onplay = function() {
+        audio6Content.classList.toggle('show');
+        setTimeout(function() {
+            audio6Content.classList.toggle('show');
+        },700)
+    }
+
+    // $('.audioContent audio').each(function() {
+    //
+    	// $(this).onplay = function() {
+    //
+    	// 	var id= $(this).attr('id')
+    //
+	// 		$('#'+id+'Content').toggleClass('show')
+    //
+	// 	}
+	// })
 
 })

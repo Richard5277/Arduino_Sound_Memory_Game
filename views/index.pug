@@ -1,38 +1,44 @@
 doctype html
 html
   head
-    title= test
+    title= title
     meta(charset='utf-8')
+    link(href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet')
     link(rel='stylesheet', href='/style.css')
-    script(src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js")
-    script(src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.0/underscore-min.js")
+    script(src='https://code.jquery.com/jquery-3.3.1.min.js' integrity='sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=' crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.0/underscore-min.js')
   body
-    h1(style="color:black;")='Hello World'
+    h1= title
     div.gameWrapper
-      div.audioContent
-        h1.audioTitle="AUDIO ONE"
+      div.audioContent#audio1Content
+        span 1
         audio#audio1(controls='')
-          source(src="audio1.mp3", type="audio/mp3")
+          source(src='audio1.mp3', type='audio/mp3')
           | Your browser does not support the audio element.
-      div.audioContent
+      div.audioContent#audio2Content
+        span 2
         audio#audio2(controls='')
-          source(src="audio2.mp3", type="audio/mp3")
+          source(src='audio2.mp3', type='audio/mp3')
           | Your browser does not support the audio element.
-      div.audioContent
+      div.audioContent#audio3Content
+        span 3
         audio#audio3(controls='')
-          source(src="audio3.wav", type="audio/wav")
+          source(src='audio3.wav', type='audio/wav')
           | Your browser does not support the audio element.
-      div.audioContent
+      div.audioContent#audio4Content
+        span 4
         audio#audio4(controls='')
-          source(src="audio4.wav", type="audio/wav")
+          source(src='audio4.wav', type='audio/wav')
           | Your browser does not support the audio element.
-      div.audioContent
+      div.audioContent#audio5Content
+        span Correct!
         audio#audio5(controls='')
-          source(src="correct.wav", type="audio/wav")
+          source(src='correct.wav', type='audio/wav')
           | Your browser does not support the audio element.
-      div.audioContent
+      div.audioContent#audio6Content
+        span Incorrect.
         audio#audio6(controls='')
-          source(src="incorrect.wav", type="audio/wav")
+          source(src='incorrect.wav', type='audio/wav')
           | Your browser does not support the audio element.
   script(src='main.js')

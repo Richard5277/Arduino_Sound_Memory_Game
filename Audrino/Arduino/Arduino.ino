@@ -82,22 +82,22 @@ void lightLED (int number) {
   switch (number){
         case 1:
           digitalWrite(led8, HIGH);
-          delay(400);
+          delay(700);
           digitalWrite(led8, LOW);
           break;
        case 2:
           digitalWrite(led9, HIGH);
-          delay(400);
+          delay(700);
           digitalWrite(led9, LOW);
           break;
       case 3:
           digitalWrite(led10, HIGH);
-          delay(400);
+          delay(700);
           digitalWrite(led10, LOW);
           break;
        case 4:
           digitalWrite(led11, HIGH);
-          delay(400);
+          delay(700);
           digitalWrite(led11, LOW);
           break; 
       }
