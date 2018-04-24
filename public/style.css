@@ -1,21 +1,73 @@
+* {
+  box-sizing: border-box;
+}
+
 body, html {
   padding: 0;
   margin:0;
-  background-color: white;
+  background-color: #004242;
+  color: white;
+  font-family: 'Comfortaa', cursive;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3.5rem;
+}
+
+audio {
+  display: none;
 }
 
 .gameWrapper {
   display: grid;
-  grid-template-columns: auto;
-  padding: 1.2rem;
+  grid-template-columns: repeat(4,1fr);
+  justify-items: center;
 }
 
-.audioContent{
-  padding: 1.3rem;
-  margin: 1.2rem;
-  background-color: purple;
+.audioContent {
+  position: relative;
+  background: transparent;
+  border: 1px solid #fff;
+  padding: 5rem;
+  margin: 1rem;
+  box-shadow: none;
+  transition: .3s all;
 }
 
-.audioTitle {
-  font-size: 1.8rem;
+div.audioContent span {
+  display: none;
+}
+
+div.audioContent span.reveal {
+  display: initial;
+}
+
+.audioContent.show {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+  bottom: 10px;
+}
+
+.audioContent.show:nth-of-type(1) {
+  background: #F99D25;
+}
+
+.audioContent.show:nth-of-type(2) {
+  background: #F99D25;
+}
+
+.audioContent.show:nth-of-type(3) {
+  background: #F99D25;
+}
+
+.audioContent.show:nth-of-type(4) {
+  background: #F99D25;
+}
+
+.audioContent.show:nth-of-type(5) {
+  background: green;
+}
+
+.audioContent.show:nth-of-type(6) {
+  background: red;
 }
