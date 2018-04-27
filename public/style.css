@@ -32,7 +32,7 @@ audio {
   padding: 5rem;
   margin: 1rem;
   box-shadow: none;
-  transition: .3s all;
+  transition: .2s all;
 }
 
 div.audioContent span {
@@ -70,4 +70,8 @@ div.audioContent span.reveal {
 
 .audioContent.show:nth-of-type(6) {
   background: red;
+}
+
+div#level {
+  text-align: center;
 }

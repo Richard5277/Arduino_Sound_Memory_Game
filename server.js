@@ -51,6 +51,7 @@ io.sockets.on('connection', function (socket) {
 			soundsCombination=[]
 			var numbersGeneratedOnServer = systemGenerator()
 			io.emit("START", numbersGeneratedOnServer)
+			io.emit('level', currentLevel)
 			sendNumbersToBoard(numbersGeneratedOnServer)
 		},1500)
 
@@ -122,8 +123,10 @@ parser.on('data', function(data){
 	switch (data){
 		case 'START':
 			// soundsCombination=[]
+            currentLevel = 4
 			var numbersGeneratedOnServer = systemGenerator()
 			io.emit("START", numbersGeneratedOnServer)
+			io.emit("level", currentLevel)
 			sendNumbersToBoard(numbersGeneratedOnServer)
 			break;
 		case 'ENTER':
