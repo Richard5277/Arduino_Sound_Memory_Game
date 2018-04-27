@@ -62,6 +62,11 @@ $(document).ready(function(){
 		queue_sounds(systemSoudsTrack)
 	})
 
+	socket.on('level', function(level){
+		console.log("current level : ", level)
+		document.getElementById('levelNumber').innerHTML = level
+	})
+
 	// socket.on('data', function(data){
 	// 	console.log('data from server',data)
 	// });

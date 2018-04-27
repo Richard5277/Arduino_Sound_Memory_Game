@@ -71,3 +71,7 @@ div.audioContent span.reveal {
 .audioContent.show:nth-of-type(6) {
   background: red;
 }
+
+div#level {
+  text-align: center;
+}
